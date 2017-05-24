@@ -45,32 +45,32 @@ void initMembershipFunctions(fuzzy_system_rec *fl) {
   // NOTE: enum {in_nl,in_ns,in_ze,in_ps, in_pl};
   //-------------------------
   /* The X membership functions */
-  fl->inp_mem_fns[in_x][in_nl] = init_trapz(-1.75, -2.25, 0, 0, left_trapezoid);
-  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-0.75, -0.25, -1.75, -2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.25, 0.25, 0.75, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_ps] = init_trapz(0.25, 0.75, 1.75, 2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_pl] = init_trapz(1.75, 2.25, 0, 0, right_trapezoid);
+  fl->inp_mem_fns[in_x][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);
+  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-0.25, -0.75, -1.75, -2.25, regular_trapezoid);
+  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid);
+  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid);
+  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);
   /* The X dot membership functions */
   //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz(-1.75, -2.25, 0, 0, left_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-0.75, -0.25, -1.75, -2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.25, 0.25, 0.75, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz(0.25, 0.75, 1.75, 2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz(1.75, 2.25, 0, 0, right_trapezoid);
+  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);
+  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-0.25, -0.75, -1.75, -2.25, regular_trapezoid);
+  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid);
+  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid);
+  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);
   /* The theta membership functions */
   //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_theta][in_nl] = init_trapz(60, 65, 0, 0, left_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(87.5, 85, 65, 60, regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(85, 87.5, 92.5, 95, regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ps] = init_trapz(92.5, 95, 125, 130, regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_pl] = init_trapz(130, 125, 0, 0, right_trapezoid);
+  fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-30,  -35,   0,   0,  left_trapezoid);
+  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-2.5, -5,   -30, -35, regular_trapezoid);
+  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-5,   -2.5,  2.5, 5,  regular_trapezoid);
+  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 2.5,  5,    30,  35, regular_trapezoid);
+  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 30,   35,   0,   0,  right_trapezoid);
   /* The theta dot membership functions */
   //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(60, 65, 0, 0, left_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(87.5, 85, 65, 60, regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(85, 87.5, 92.5, 95, regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz(92.5, 95, 125, 130, regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz(130, 125, 0, 0, right_trapezoid);
+  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-30,  -35,   0,   0,  left_trapezoid);
+  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-2.5, -5,   -30, -35, regular_trapezoid);
+  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-5,   -2.5,  2.5, 5,  regular_trapezoid);
+  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 2.5,  5,    30,  35, regular_trapezoid);
+  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz( 30,   35,   0,   0,  right_trapezoid);
   return;
 }
 
