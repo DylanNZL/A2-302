@@ -14,7 +14,7 @@
 using namespace std;
 /////////////////////////////////////////////////////
 #define MAX_NO_OF_INPUTS 5
-#define MAX_NO_OF_INP_REGIONS 7
+#define MAX_NO_OF_INP_REGIONS 5
 #define MAX_NO_OF_OUTPUT_VALUES 9
 #define TOO_SMALL 1e-6
 

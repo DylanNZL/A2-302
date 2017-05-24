@@ -339,10 +339,11 @@ void generateControlSurface_Angle_vs_Angle_Dot(){
 			inputs[in_theta_dot] = prevState.angle_dot;
 			inputs[in_x] = prevState.x;
 			inputs[in_x_dot] = prevState.x_dot;
-			prevState.F = 0.0;  //nothing is done.//fuzzy_system(inputs, g_fuzzy_system);
-			 //---------------------------------------------------------------------------
-			 //Calculate the new state of the world
-			 //Updating angle
+			prevState.F = 0.0;  //nothing is done.
+			//fuzzy_system(inputs, g_fuzzy_system);
+			//---------------------------------------------------------------------------
+			//Calculate the new state of the world
+			//Updating angle
 			newState.angle_double_dot = calc_angular_acceleration(prevState);
 			newState.angle_dot = prevState.angle_dot + (h * newState.angle_double_dot);
 			newState.angle = prevState.angle + (h * newState.angle_dot);
