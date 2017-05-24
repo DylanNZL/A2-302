@@ -18,7 +18,7 @@ using namespace std;
 /////////////////////////////////////////////////////
 
 #define MAX_NO_OF_INPUTS 5
-#define MAX_NO_OF_INP_REGIONS 5
+#define MAX_NO_OF_INP_REGIONS 7
 #define MAX_NO_OF_OUTPUT_VALUES 9
 
 #define TOO_SMALL 1e-6
@@ -39,7 +39,7 @@ enum {out_nvl,out_nl,out_nm, out_ns, out_ze,out_ps, out_pm,out_pl, out_pvl};
 typedef struct {
    trapz_type tp;
    float a,b,c,d,l_slope,r_slope;
-   
+
 }trapezoid;
 
 typedef struct {
@@ -66,7 +66,7 @@ void free_fuzzy_rules (fuzzy_system_rec *fz);
 
 //-------------------------------------------------------------------------
 void initFuzzyRules(fuzzy_system_rec *fl);
-void initMembershipFunctions(fuzzy_system_rec *fl); 
+void initMembershipFunctions(fuzzy_system_rec *fl);
 void initFuzzySystem (fuzzy_system_rec *fl);
 
 trapezoid init_trapz (float x1,float x2,float x3,float x4, trapz_type typ);
