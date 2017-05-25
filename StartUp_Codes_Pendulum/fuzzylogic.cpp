@@ -13,14 +13,48 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
   for (i = 0;i < no_of_theta_rules;i++) {
     fl->rules[i].inp_index[0] = in_theta;
     fl->rules[i].inp_index[1] = in_theta_dot;
+    // THETA INPUTS
+    int theta = i / 5;
+    switch (theta) {
+      case 0:
+        fl->rules[i].inp_fuzzy_set[0] = in_nl;
+        break;
+      case 1:
+        fl->rules[i].inp_fuzzy_set[0] = in_ns;
+        break;
+      case 2:
+        fl->rules[i].inp_fuzzy_set[0] = in_ze;
+        break;
+      case 3:
+        fl->rules[i].inp_fuzzy_set[0] = in_ps;
+        break;
+      case 4:
+        fl->rules[i].inp_fuzzy_set[0] = in_pl;
+        break;
+    }
+    // THETA_DOT INPUTS
+    int theta_dot = i % 5;
+    switch (i) {
+      case 0:
+        fl->rules[i].inp_fuzzy_set[1] = in_nl;
+        break;
+      case 1:
+        fl->rules[i].inp_fuzzy_set[1] = in_ns;
+        break;
+      case 2:
+        fl->rules[i].inp_fuzzy_set[1] = in_ze;
+        break;
+      case 3:
+        fl->rules[i].inp_fuzzy_set[1] = in_ps;
+        break;
+      case 4:
+        fl->rules[i].inp_fuzzy_set[1] = in_pl;
+        break;
+    }
   }
-  /* Regions for theta and theta_dot: */
-  //sample only
-  // fl->rules[0].inp_fuzzy_set[0] = in_nl;
-  // fl->rules[0].inp_fuzzy_set[1] = in_nl;
 
   // THETA x THETA_DOT FAMM
-  // THETA DOT = NL NS ZE PS PL (1 2 3 4 5)
+  // THETA DOT = NL NS ZE PS PL (0 1 2 3 4)
   // Theta = NL
   fl->rules[ 0].out_fuzzy_set = out_pl;
   fl->rules[ 1].out_fuzzy_set = out_pm;
@@ -58,13 +92,45 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
   for (i = 0;i < no_of_x_rules;i++) {
    	fl->rules[i + no_of_theta_rules].inp_index[0] = in_x;
    	fl->rules[i + no_of_theta_rules].inp_index[1] = in_x_dot;
+    // X INPUTS
+    int x = i / 5;
+    switch (x) {
+      case 0:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[0] = in_nl;
+        break;
+      case 1:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[0] = in_ns;
+        break;
+      case 2:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[0] = in_ze;
+        break;
+      case 3:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[0] = in_ps;
+        break;
+      case 4:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[0] = in_pl;
+        break;
+    }
+    // X_DOT INPUTS
+    int x_dot = i % 5;
+    switch (x_dot) {
+      case 0:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[1] = in_nl;
+        break;
+      case 1:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[1] = in_ns;
+        break;
+      case 2:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[1] = in_ze;
+        break;
+      case 3:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[1] = in_ps;
+        break;
+      case 4:
+        fl->rules[i + no_of_theta_rules].inp_fuzzy_set[1] = in_pl;
+        break;
+    }
 	}
-	/* Regions for x and x_dot: */
-   //sample only
-   // fl->rules[25+0].inp_fuzzy_set[0] = in_nl;
-   // fl->rules[25+0].inp_fuzzy_set[1] = in_nl;
-
-  //and so on, and so forth...
 
   // X x X_DOT FAMM
   // X DOT = NL NS ZE PS PL (1 2 3 4 5)
