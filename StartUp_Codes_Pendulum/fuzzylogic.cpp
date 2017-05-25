@@ -34,7 +34,7 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
     }
     // THETA_DOT INPUTS
     int theta_dot = i % 5;
-    switch (i) {
+    switch (theta_dot) {
       case 0:
         fl->rules[i].inp_fuzzy_set[1] = in_nl;
         break;
@@ -215,8 +215,17 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
   fl->no_of_outputs = 9;
 
   //Sample only
-	// fl->output_values [out_nvl]=-95.0;
-	// fl->output_values [out_nl] = -85.0;
+  // NOTE: Fuzzy output terms
+  // NOTE: enum {out_nvl,out_nl,out_nm, out_ns, out_ze,out_ps, out_pm,out_pl, out_pvl};
+	fl->output_values[out_nvl] = -10.0;
+	fl->output_values[out_nl]  = -7.0;
+  fl->output_values[out_nm]  = -7.0;
+	fl->output_values[out_ns]  = -2.0;
+  fl->output_values[out_ze]  =  0.0;
+	fl->output_values[out_ps]  =  2.0;
+  fl->output_values[out_pm]  =  4.0;
+	fl->output_values[out_pl]  =  7.0;
+  fl->output_values[out_pvl] =  10.0;
 
   fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
   initFuzzyRules(fl);

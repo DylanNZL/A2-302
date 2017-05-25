@@ -184,7 +184,6 @@ void displayInfo(const WorldStateType& s){
 	outtextxy((deviceBoundary.x2 - textwidth("n.h.reyes@massey.ac.nz")), deviceBoundary.y2 - (5*textheight("H")),angleStr);
 }
 
-
 void runInvertedPendulum() {
 	float inputs[4];
 	WorldStateType prevState, newState;
@@ -224,7 +223,7 @@ void runInvertedPendulum() {
 
     //1) Enable this only after your fuzzy system has been completed already.
     //Remember, you need to define the rules, membership function parameters and rule outputs.
-    //prevState.F = fuzzy_system(inputs, g_fuzzy_system); //call the fuzzy controller
+    prevState.F = fuzzy_system(inputs, g_fuzzy_system); //call the fuzzy controller
 		externalForce=0.0;
 		externalForce = getKey(); //manual operation
 		if(externalForce != 0.0) prevState.F = externalForce;
@@ -274,7 +273,7 @@ void runInvertedPendulum() {
     }
   }
   //2) Enable this only after your fuzzy system has been completed already.
-	//free_fuzzy_rules(&g_fuzzy_system);
+	free_fuzzy_rules(&g_fuzzy_system);
 }
 
 
