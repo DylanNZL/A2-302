@@ -217,15 +217,15 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
   //Sample only
   // NOTE: Fuzzy output terms
   // NOTE: enum {out_nvl,out_nl,out_nm, out_ns, out_ze,out_ps, out_pm,out_pl, out_pvl};
-	fl->output_values[out_nvl] = -10.0;
-	fl->output_values[out_nl]  = -7.0;
-  fl->output_values[out_nm]  = -7.0;
-	fl->output_values[out_ns]  = -2.0;
+	fl->output_values[out_nvl] =  10.0;
+	fl->output_values[out_nl]  =  7.0;
+  fl->output_values[out_nm]  =  7.0;
+	fl->output_values[out_ns]  =  2.0;
   fl->output_values[out_ze]  =  0.0;
-	fl->output_values[out_ps]  =  2.0;
-  fl->output_values[out_pm]  =  4.0;
-	fl->output_values[out_pl]  =  7.0;
-  fl->output_values[out_pvl] =  10.0;
+	fl->output_values[out_ps]  = -2.0;
+  fl->output_values[out_pm]  = -4.0;
+	fl->output_values[out_pl]  = -7.0;
+  fl->output_values[out_pvl] = -10.0;
 
   fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
   initFuzzyRules(fl);
