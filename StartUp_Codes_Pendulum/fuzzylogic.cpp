@@ -52,7 +52,6 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
         break;
     }
   }
-
   // THETA x THETA_DOT FAMM
   // THETA DOT = NL NS ZE PS PL (0 1 2 3 4)
   // Theta = NL
@@ -131,7 +130,6 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
         break;
     }
 	}
-
   // X x X_DOT FAMM
   // X DOT = NL NS ZE PS PL (1 2 3 4 5)
   // X = NL
@@ -177,28 +175,28 @@ void initMembershipFunctions(fuzzy_system_rec *fl) {
   //-------------------------
   /* The X membership functions */
   // Between -2.4m & 2.4m
-  fl->inp_mem_fns[in_x][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);    //
-  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-1.75, -2.25, -0.25, -0.75, regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);   //
+  fl->inp_mem_fns[in_x][in_nl] = init_trapz( 0,     0,    -1.75, -2.25, left_trapezoid);    //
+  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-1.75, -2.25, -0.5,  -0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.5,   0.5,   0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.5,   0.75,  1.75,  2.25, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 1.75,  2.25,  0,     0,  right_trapezoid);   //
   /* The X dot membership functions */
   // Between -4.5m/s & 4.5m/s
-  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz(-2,    -3,     0,     0,    left_trapezoid);    //
-  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-2,    -3,    -0.25, -0.75, regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.25,  0.75,  2,     3,    regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 2,     3,     0,     0,    right_trapezoid);   //
+  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz( 0,     0,   -2,   -3,    left_trapezoid);    //
+  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-2,    -3,   -0.5, -0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.5,  0.5,  0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.5,   0.75, 2,    3,    regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 2,    3,     0,     0,   right_trapezoid);   //
   /* The theta membership functions */
   // Between -0.8 & 0.8 radians (-45 & 45 degrees)
-  fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-0.35, -0.45,  0,    0,     left_trapezoid);    // -25 to -infinity
-  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.45, -0.35, -0.1, -0.05,  regular_trapezoid); // -25 to -5 degrees
-  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.1,  -0.05,  0.05, 0.1,   regular_trapezoid); // -5 to 5 degrees
-  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 0.1,   0.05,  0.35, 0.45,  regular_trapezoid); //  5 to 25 degrees
-  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 0.35,  0.45,  0,    0,     right_trapezoid);   // 25 to infinity
+  fl->inp_mem_fns[in_theta][in_nl] = init_trapz( 0,     0,    -0.35, -0.45, left_trapezoid);    // -25 to -infinity
+  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.45, -0.35, -0.1,  -0.05, regular_trapezoid); // -25 to -5 degrees
+  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.1,  -0.05,  0.05,  0.1,  regular_trapezoid); // -5 to 5 degrees
+  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 0.1,   0.05,  0.35,  0.45, regular_trapezoid); //  5 to 25 degrees
+  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 0.35,  0.45,  0,     0,    right_trapezoid);   // 25 to infinity
   /* The theta dot membership functions */
   // Between -0.4 & 0.4 Radians/Seconds (22 degrees)
-  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-0.2,  -0.25,  0,     0,     left_trapezoid);    //
+  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz( 0,     0,    -0.2,  -0.25,  left_trapezoid);    //
   fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.25, -0.2,  -0.05, -0.025, regular_trapezoid); //
   fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.05, -0.025, 0.025, 0.05,  regular_trapezoid); //
   fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 0.025, 0.05,  0.20,  0.25,  regular_trapezoid); //
@@ -301,8 +299,7 @@ float min_of(float values[],int no_of_inps) {
   float val;
   val = values [0];
   for (i = 1;i < no_of_inps;i++) {
-    if (values[i] < val)
-	  val = values [i];
+    if (values[i] < val) val = values [i];
   }
   return val;
 }
@@ -333,6 +330,7 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
     //~ exit(1);
     return 0.0;
   }
+  //cout << "sum1 " << sum1 << " sum2 " << sum2 << " 1/2 " << sum1/sum2 << endl;
   return (sum1/sum2);
 }  /* end fuzzy_system  */
 
