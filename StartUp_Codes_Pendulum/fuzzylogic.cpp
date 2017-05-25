@@ -37,7 +37,7 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
 }
 
 void initMembershipFunctions(fuzzy_system_rec *fl) {
-  //Sample routines only, to give you an idea of what to do here
+  // Sample routines only, to give you an idea of what to do here
   //~ fl->inp_mem_fns[in_x][in_neg] = init_trapz (-1.5,-0.5,0,0,left_trapezoid);
   //~ fl->inp_mem_fns[in_x][in_ze] = init_trapz (-1.5,-0.5,0.5,1.5,regular_trapezoid);
   //~ fl->inp_mem_fns[in_x][in_pos] = init_trapz (0.5,1.5,0,0,right_trapezoid);
@@ -45,32 +45,33 @@ void initMembershipFunctions(fuzzy_system_rec *fl) {
   // NOTE: enum {in_nl,in_ns,in_ze,in_ps, in_pl};
   //-------------------------
   /* The X membership functions */
-  fl->inp_mem_fns[in_x][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);
-  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-0.25, -0.75, -1.75, -2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);
+  // Between -2.4m & 2.4m
+  fl->inp_mem_fns[in_x][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);    //
+  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-0.25, -0.75, -1.75, -2.25, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);   //
   /* The X dot membership functions */
-  //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz(-1.75, -2.25,  0,     0,    left_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-0.25, -0.75, -1.75, -2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.25,  0.75,  1.75,  2.25, regular_trapezoid);
-  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 1.75,  2.25,  0,     0,    right_trapezoid);
+  // Between -4.5m/s & 4.5m/s
+  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz(-2,    -3,     0,     0,    left_trapezoid);    //
+  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-0.25, -0.75, -2,    -3,    regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-0.75, -0.25,  0.25,  0.75, regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.25,  0.75,  2,     3,    regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 2,     3,     0,     0,    right_trapezoid);   //
   /* The theta membership functions */
-  //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-30,  -35,   0,   0,  left_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-2.5, -5,   -30, -35, regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-5,   -2.5,  2.5, 5,  regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 2.5,  5,    30,  35, regular_trapezoid);
-  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 30,   35,   0,   0,  right_trapezoid);
+  // Between -0.8 & 0.8 radians (-45 & 45 degrees)
+  fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-0.35, -0.45,  0,    0,     left_trapezoid);    // -25 to -infinity
+  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.45, -0.35, -0.1, -0.05,  regular_trapezoid); // -25 to -5 degrees
+  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.1,  -0.05,  0.05, 0.1,   regular_trapezoid); // -5 to 5 degrees
+  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 0.1,   0.05,  0.35, 0.45,  regular_trapezoid); //  5 to 25 degrees
+  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 0.35,  0.45,  0,    0,     right_trapezoid);   // 25 to infinity
   /* The theta dot membership functions */
-  //enter the appropriate membership function initialisations here
-  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-30,  -35,   0,   0,  left_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-2.5, -5,   -30, -35, regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-5,   -2.5,  2.5, 5,  regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 2.5,  5,    30,  35, regular_trapezoid);
-  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz( 30,   35,   0,   0,  right_trapezoid);
+  // Between -0.4 & 0.4 Radians/Seconds (22 degrees)
+  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-0.2,  -0.25,  0,     0,     left_trapezoid);    //
+  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.25, -0.2,  -0.05, -0.025, regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.05, -0.025, 0.025, 0.05,  regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 0.025, 0.05,  0.20,  0.25,  regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz( 0.2,   0.25,  0,     0,     right_trapezoid);   //
   return;
 }
 
