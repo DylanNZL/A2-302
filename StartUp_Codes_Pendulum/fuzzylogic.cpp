@@ -18,6 +18,40 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
   //sample only
   // fl->rules[0].inp_fuzzy_set[0] = in_nl;
   // fl->rules[0].inp_fuzzy_set[1] = in_nl;
+
+  // THETA x THETA_DOT FAMM
+  // THETA DOT = NL NS ZE PS PL (1 2 3 4 5)
+  // Theta = NL
+  fl->rules[ 0].out_fuzzy_set = out_pl;
+  fl->rules[ 1].out_fuzzy_set = out_pm;
+  fl->rules[ 2].out_fuzzy_set = out_ps;
+  fl->rules[ 3].out_fuzzy_set = out_ps;
+  fl->rules[ 4].out_fuzzy_set = out_ze;
+  // Theta = NS
+  fl->rules[ 5].out_fuzzy_set = out_pm;
+  fl->rules[ 6].out_fuzzy_set = out_ps;
+  fl->rules[ 7].out_fuzzy_set = out_ps;
+  fl->rules[ 8].out_fuzzy_set = out_ze;
+  fl->rules[ 9].out_fuzzy_set = out_ns;
+  // Theta = ZE
+  fl->rules[10].out_fuzzy_set = out_ps;
+  fl->rules[11].out_fuzzy_set = out_ps;
+  fl->rules[12].out_fuzzy_set = out_ze;
+  fl->rules[13].out_fuzzy_set = out_ns;
+  fl->rules[14].out_fuzzy_set = out_ns;
+  // Theta = PS
+  fl->rules[15].out_fuzzy_set = out_ps;
+  fl->rules[16].out_fuzzy_set = out_ze;
+  fl->rules[17].out_fuzzy_set = out_ns;
+  fl->rules[18].out_fuzzy_set = out_ns;
+  fl->rules[19].out_fuzzy_set = out_nl;
+  // Theta = PL
+  fl->rules[20].out_fuzzy_set = out_ze;
+  fl->rules[21].out_fuzzy_set = out_ns;
+  fl->rules[22].out_fuzzy_set = out_ns;
+  fl->rules[23].out_fuzzy_set = out_nm;
+  fl->rules[24].out_fuzzy_set = out_nl;
+
   //----------------------------------------------------------------------------
   //X vs. X_DOT
   //
@@ -32,7 +66,38 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
 
   //and so on, and so forth...
 
-  // fl->rules[25+24].out_fuzzy_set = out_nl;
+  // X x X_DOT FAMM
+  // X DOT = NL NS ZE PS PL (1 2 3 4 5)
+  // X = NL
+  fl->rules[ 0 + no_of_theta_rules].out_fuzzy_set = out_pl;
+  fl->rules[ 1 + no_of_theta_rules].out_fuzzy_set = out_pm;
+  fl->rules[ 2 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[ 3 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[ 4 + no_of_theta_rules].out_fuzzy_set = out_ze;
+  // X = NS
+  fl->rules[ 5 + no_of_theta_rules].out_fuzzy_set = out_pm;
+  fl->rules[ 6 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[ 7 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[ 8 + no_of_theta_rules].out_fuzzy_set = out_ze;
+  fl->rules[ 9 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  // X = ZE
+  fl->rules[10 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[11 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[12 + no_of_theta_rules].out_fuzzy_set = out_ze;
+  fl->rules[13 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  fl->rules[14 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  // X = PS
+  fl->rules[15 + no_of_theta_rules].out_fuzzy_set = out_ps;
+  fl->rules[16 + no_of_theta_rules].out_fuzzy_set = out_ze;
+  fl->rules[17 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  fl->rules[18 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  fl->rules[19 + no_of_theta_rules].out_fuzzy_set = out_nl;
+  // X = PL
+  fl->rules[20 + no_of_theta_rules].out_fuzzy_set = out_ze;
+  fl->rules[21 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  fl->rules[22 + no_of_theta_rules].out_fuzzy_set = out_ns;
+  fl->rules[23 + no_of_theta_rules].out_fuzzy_set = out_nm;
+  fl->rules[24 + no_of_theta_rules].out_fuzzy_set = out_nl;
   return;
 }
 
