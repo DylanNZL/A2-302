@@ -374,9 +374,6 @@ void generateControlSurface_Angle_vs_Angle_Dot(){
   cout << "done collecting data." << endl;
 }
 
-
-
-
 void saveDataToFile(string fileName){
 	cout << "Saving control surface to file: " << fileName << "..." << endl;
 	ofstream myfile;
@@ -427,7 +424,6 @@ void clearDataSet(){
    cout << "DataSet cleared." << endl;
 
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////
 
