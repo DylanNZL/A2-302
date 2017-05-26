@@ -273,7 +273,7 @@ float trapz (float x, trapezoid trz) {
       if (x >= trz.c)
         return 0.0;
       /* a < x < b */
-      return trz.r_slope * (x - trz.b);
+      return trz.r_slope * (x - trz.c);
 
     case right_trapezoid:
       if (x <= trz.a)
