@@ -218,15 +218,15 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
 
   // NOTE: Fuzzy output terms
   // NOTE: enum {out_nvl,out_nl,out_nm, out_ns, out_ze,out_ps, out_pm,out_pl, out_pvl};
-	fl->output_values[out_nvl] = -12.0;
-	fl->output_values[out_nl]  = -6.0;
-  fl->output_values[out_nm]  = -3.0;
-	fl->output_values[out_ns]  = -1.5;
+	fl->output_values[out_nvl] = -40.0;
+	fl->output_values[out_nl]  = -20.0;
+  fl->output_values[out_nm]  = -10.0;
+	fl->output_values[out_ns]  = -5.0;
   fl->output_values[out_ze]  =  0.0;
-	fl->output_values[out_ps]  =  1.5;
-  fl->output_values[out_pm]  =  3.0;
-	fl->output_values[out_pl]  =  6.0;
-  fl->output_values[out_pvl] =  12.0;
+	fl->output_values[out_ps]  =  5.0;
+  fl->output_values[out_pm]  =  10.0;
+	fl->output_values[out_pl]  =  20.0;
+  fl->output_values[out_pvl] =  40.0;
 
   fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
   initFuzzyRules(fl);
@@ -269,11 +269,11 @@ float trapz (float x, trapezoid trz) {
   switch (trz.tp) {
     case left_trapezoid:
       if (x <= trz.d)
-        return 1.0;
-      if (x >= trz.c)
         return 0.0;
+      if (x >= trz.c)
+        return 1.0;
       /* a < x < b */
-      return trz.r_slope * (x - trz.c);
+      return trz.r_slope * (x - trz.d);
 
     case right_trapezoid:
       if (x <= trz.a)
