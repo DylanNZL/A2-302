@@ -215,7 +215,7 @@ void runInvertedPendulum() {
 		setactivepage(page);
     cleardevice();
 		drawInvertedPendulumWorld();
-	     //retrieve inputs
+	  //retrieve inputs
 		inputs[in_theta] = prevState.angle;
 		inputs[in_theta_dot] = prevState.angle_dot;
 		inputs[in_x] = prevState.x;
@@ -437,10 +437,10 @@ int main(void) {
 		runInvertedPendulum();
 
 		//3) Enable this only after your fuzzy system has been completed already.
-		//generateControlSurface_Angle_vs_Angle_Dot();
+		generateControlSurface_Angle_vs_Angle_Dot();
 
 		//4) Enable this only after your fuzzy system has been completed already.
-		//saveDataToFile("data_angle_vs_angle_dot.txt");
+		saveDataToFile("data_angle_vs_angle_dot.txt");
 
    }
    catch(...){
