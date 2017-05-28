@@ -64,35 +64,35 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
   // THETA x THETA_DOT FAMM
   // THETA DOT = NL NS ZE PS PL (0 1 2 3 4)
   // Theta = NL
-  fl->rules[ 0].out_fuzzy_set = out_pvl;
-  fl->rules[ 1].out_fuzzy_set = out_pl;
-  fl->rules[ 2].out_fuzzy_set = out_pm;
-  fl->rules[ 3].out_fuzzy_set = out_ps;
+  fl->rules[ 0].out_fuzzy_set = out_nvl;
+  fl->rules[ 1].out_fuzzy_set = out_nl;
+  fl->rules[ 2].out_fuzzy_set = out_nm;
+  fl->rules[ 3].out_fuzzy_set = out_ns;
   fl->rules[ 4].out_fuzzy_set = out_ze;
   // Theta = NS
-  fl->rules[ 5].out_fuzzy_set = out_pl;
-  fl->rules[ 6].out_fuzzy_set = out_pm;
-  fl->rules[ 7].out_fuzzy_set = out_ps;
+  fl->rules[ 5].out_fuzzy_set = out_nl;
+  fl->rules[ 6].out_fuzzy_set = out_nm;
+  fl->rules[ 7].out_fuzzy_set = out_ns;
   fl->rules[ 8].out_fuzzy_set = out_ze;
-  fl->rules[ 9].out_fuzzy_set = out_ns;
+  fl->rules[ 9].out_fuzzy_set = out_ps;
   // Theta = ZE
-  fl->rules[10].out_fuzzy_set = out_pm;
-  fl->rules[11].out_fuzzy_set = out_ps;
+  fl->rules[10].out_fuzzy_set = out_nm;
+  fl->rules[11].out_fuzzy_set = out_ns;
   fl->rules[12].out_fuzzy_set = out_ze;
-  fl->rules[13].out_fuzzy_set = out_ns;
-  fl->rules[14].out_fuzzy_set = out_nm;
+  fl->rules[13].out_fuzzy_set = out_ps;
+  fl->rules[14].out_fuzzy_set = out_pm;
   // Theta = PS
-  fl->rules[15].out_fuzzy_set = out_ps;
+  fl->rules[15].out_fuzzy_set = out_ns;
   fl->rules[16].out_fuzzy_set = out_ze;
-  fl->rules[17].out_fuzzy_set = out_ns;
-  fl->rules[18].out_fuzzy_set = out_nm;
-  fl->rules[19].out_fuzzy_set = out_nl;
+  fl->rules[17].out_fuzzy_set = out_ps;
+  fl->rules[18].out_fuzzy_set = out_pm;
+  fl->rules[19].out_fuzzy_set = out_pl;
   // Theta = PL
   fl->rules[20].out_fuzzy_set = out_ze;
-  fl->rules[21].out_fuzzy_set = out_ns;
-  fl->rules[22].out_fuzzy_set = out_nm;
-  fl->rules[23].out_fuzzy_set = out_nl;
-  fl->rules[24].out_fuzzy_set = out_nvl;
+  fl->rules[21].out_fuzzy_set = out_ps;
+  fl->rules[22].out_fuzzy_set = out_pm;
+  fl->rules[23].out_fuzzy_set = out_pl;
+  fl->rules[24].out_fuzzy_set = out_pvl;
   // X x X_DOT FAMM
   // X DOT = NL NS ZE PS PL (1 2 3 4 5)
   // X = NL
@@ -213,7 +213,7 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
   fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
   initFuzzyRules(fl);
   initMembershipFunctions(fl);
-  
+
   // DEBUG: FOR CHECKING THE RULES INITIALISED CORRECTLY
   /*
   for (int i=0; i < 50; ++i) {
