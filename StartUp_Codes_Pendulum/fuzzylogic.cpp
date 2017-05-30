@@ -162,32 +162,32 @@ void initMembershipFunctions(fuzzy_system_rec *fl) {
   // OUR TRAPz
   // The X membership functions
   // Between -2.4m & 2.4m
-  fl->inp_mem_fns[in_x][in_nl] = init_trapz( 0,    0,   -2.4, -2,    left_trapezoid);    //
-  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-2.4, -2,   -0.7, -0.4,  regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-0.7, -0.4,  0.4,  0.7,  regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 0.4,  0.7,  2,    2.4,  regular_trapezoid); //
-  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 2,  2.4,    0,    0,    right_trapezoid);   //
+  fl->inp_mem_fns[in_x][in_nl] = init_trapz( 0,    0,   -3, -2.4,    left_trapezoid);    //
+  fl->inp_mem_fns[in_x][in_ns] = init_trapz(-3, -2.4,   -2,   -1.5,  regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ze] = init_trapz(-2, -1.5,  1.5,  2,  regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_ps] = init_trapz( 1.5,  2,    2.4,    3,  regular_trapezoid); //
+  fl->inp_mem_fns[in_x][in_pl] = init_trapz( 2.4,    3,  0,    0,    right_trapezoid);   //
   // The X dot membership functions
   // Between -4.5m/s & 4.5m/s
-  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz( 0,    0,   -4.5, -4,   left_trapezoid);    //
-  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-4.5, -4,   -1,   -0.5, regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-1,   -0.5,  0.5,  1,   regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 0.5,  1,    4,    4.5,  regular_trapezoid); //
-  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 4,    4.5,  0,    0,   right_trapezoid);   //
+  fl->inp_mem_fns[in_x_dot][in_nl] = init_trapz( 0,    0,   -5,   -4.5,   left_trapezoid);    //
+  fl->inp_mem_fns[in_x_dot][in_ns] = init_trapz(-5,   -4.5, -2.5, -2, regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ze] = init_trapz(-2.5, -2,    2,    2.5,   regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_ps] = init_trapz( 2,    2.5,  4.5,  5,  regular_trapezoid); //
+  fl->inp_mem_fns[in_x_dot][in_pl] = init_trapz( 4.5,    2,  0,    0,   right_trapezoid);   //
   // The theta membership functions
   // Between -0.8 & 0.8 radians (-45 & 45 degrees)
-  fl->inp_mem_fns[in_theta][in_nl] = init_trapz( 0,    0,   -0.8, -0.7, left_trapezoid);    // -25 to -infinity
-  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.8, -0.7, -0.2, -0.1, regular_trapezoid); // -25 to -5 degrees
-  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.2, -0.1,  0.1,  0.2, regular_trapezoid); // -5 to 5 degrees
-  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 0.1,  0.2,  0.7,  0.8, regular_trapezoid); //  5 to 25 degrees
-  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 0.7,  0.8,  0,    0,   right_trapezoid);   // 25 to infinity
+  fl->inp_mem_fns[in_theta][in_nl] = init_trapz( 0,    0,   -0.6, -0.5,  left_trapezoid);    // -25 to -infinity
+  fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.6, -0.5, -0.1, -0.03, regular_trapezoid); // -25 to -5 degrees
+  fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.1, -0.03, 0.03, 0.1,  regular_trapezoid); // -5 to 5 degrees
+  fl->inp_mem_fns[in_theta][in_ps] = init_trapz( 0.03, 0.1,  0.5,  0.6,  regular_trapezoid); //  5 to 25 degrees
+  fl->inp_mem_fns[in_theta][in_pl] = init_trapz( 0.5,  0.6,  0,    0,    right_trapezoid);   // 25 to infinity
   // The theta dot membership functions
   // Between -0.4 & 0.4 Radians/Seconds (22 degrees)
-  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz( 0,     0,    -0.4,  -0.35,  left_trapezoid);    //
-  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.4,  -0.35, -0.1,  -0.05, regular_trapezoid); //
-  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.1,  -0.05,  0.05,  0.1,  regular_trapezoid); //
-  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 0.05,  0.1,   0.35,  0.4,  regular_trapezoid); //
-  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz( 0.35,  0.4,   0,     0,    right_trapezoid);   //
+  fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz( 0,     0,    -0.3, -0.25,  left_trapezoid);    //
+  fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.3, -0.25,  -0.1,  -0.03, regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.1, -0.03,  0.03,  0.1, regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz( 0.03,  0.1,   0.25,   0.3, regular_trapezoid); //
+  fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz( 0.25,   0.3,  0,     0,    right_trapezoid);   //
   return;
 }
 
@@ -199,7 +199,7 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
   fl->no_of_outputs = 9;
 
   // NOTE: Fuzzy output terms
-  // NOTE: enum {out_nvl,out_nl,out_nm, out_ns, out_ze,out_ps, out_pm,out_pl, out_pvl};
+  // NOTE: enum {out_nvl, out_nl, out_nm, out_ns, out_ze, out_ps, out_pm, out_pl, out_pvl };
 	fl->output_values[out_nvl] = -40.0;
 	fl->output_values[out_nl]  = -20.0;
   fl->output_values[out_nm]  = -10.0;
@@ -305,7 +305,14 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
   short variable_index,fuzzy_set;
   float sum1 = 0.0, sum2 = 0.0, weight;
   float m_values[MAX_NO_OF_INPUTS];
+  //m_values[in_theta] = m_values[in_theta_dot] * 1.05;
+  //m_values[in_theta_dot] = m_values[in_theta_dot] * 1.05;
 
+  // DEBUG: INPUTS
+  //cout << "THETA: " << inputs[in_theta] << endl;
+  //cout << "THETA_DOT: " << inputs[in_theta_dot] << endl;
+  //cout << "X: " << inputs[in_x] << endl;
+  //cout << "X_DOT: " << inputs[in_x_dot] << endl;
   for (i = 0; i < fz.no_of_rules; i++) {
     for (j = 0; j < fz.no_of_inputs; j++) {
 	    variable_index = fz.rules[i].inp_index[j];
@@ -313,6 +320,7 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
 	    m_values[j] = trapz(inputs[variable_index], fz.inp_mem_fns[variable_index][fuzzy_set]);
 	  } /* end j  */
     weight = min_of (m_values,fz.no_of_inputs);
+    //if (i > 25) { weight = weight * 1.05; }
     sum1 += weight * fz.output_values[fz.rules[i].out_fuzzy_set];
     sum2 += weight;
   } /* end i  */
@@ -323,7 +331,9 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
     //~ exit(1);
     return 0.0;
   }
-  //cout << "sum1 " << sum1 << " sum2 " << sum2 << " 1/2 " << sum1/sum2 << endl;
+  // DEBUG: RESULTS
+  //cout << "sum1 " << sum1 << " sum2 " << sum2 << " 1/2 " << sum1/sum2 << " Weight:" << weight << endl;
+  //exit(123);
   return (sum1/sum2);
 }  /* end fuzzy_system  */
 
