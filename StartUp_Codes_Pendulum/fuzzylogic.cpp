@@ -116,15 +116,15 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
   fl->no_of_inp_regions = 5;
   fl->no_of_outputs = 9;
 
-	fl->output_values[out_nvl] = -80.0;
-	fl->output_values[out_nl]  = -40.0;
+	fl->output_values[out_nvl] = -120.0;
+	fl->output_values[out_nl]  = -50.0;
   fl->output_values[out_nm]  = -20.0;
 	fl->output_values[out_ns]  = -10.0;
   fl->output_values[out_ze]  =  0.0;
 	fl->output_values[out_ps]  =  10.0;
   fl->output_values[out_pm]  =  20.0;
-	fl->output_values[out_pl]  =  40.0;
-  fl->output_values[out_pvl] =  80.0;
+	fl->output_values[out_pl]  =  50.0;
+  fl->output_values[out_pvl] =  120.0;
 
   fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
   initFuzzyRules(fl);

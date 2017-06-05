@@ -4,3 +4,4 @@
 *.doc
 *.docx
 ~$Traps.xlsx
+.vscode

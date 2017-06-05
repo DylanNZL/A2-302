@@ -187,7 +187,7 @@ void displayInfo(const WorldStateType& s){
 void runInvertedPendulum() {
 	float inputs[4];
 	WorldStateType prevState, newState;
-	// srand(time(NULL));  // Seed the random number generator
+  //srand(time(NULL));  // Seed the random number generator
   initPendulumWorld();
 	static bool page;
 	float const h=0.002;
