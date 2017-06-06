@@ -208,13 +208,12 @@ float min_of(float values[],int no_of_inps) {
 //////////////////////////////////////////////////////////////////////////////
 float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
   int i,j;
-
+  // Combine inputs to create new x and y inputs
   float x = (inputs[in_x] * 0.4) + (inputs[in_x_dot] * 0.6);
   float y = (inputs[in_theta] * 0.6) + (inputs[in_theta_dot] * 0.4);
-
   short variable_index,fuzzy_set_x, fuzzy_set_y;
   float sum1 = 0.0, sum2 = 0.0, weight;
-  float m_values[MAX_NO_OF_INPUTS];
+  float m_values[25];
   for (i = 0; i < 25; i++) {
     fuzzy_set_x = fz.rules[i].inp_fuzzy_set[0];
     fuzzy_set_y = fz.rules[i].inp_fuzzy_set[1];
